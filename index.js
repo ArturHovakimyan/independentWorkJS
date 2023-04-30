@@ -15,3 +15,22 @@ sum.addEventListener("click", () => {
 	}
 	finleResult.textContent = result;
 });
+
+//========================================================================
+
+const divisors = document.getElementById("divisors");
+
+divisors.addEventListener("click", () => {
+	const number = document.getElementById("number").value;
+	const separator = document.getElementById("separator");
+	let result = [];
+	const halfNumber = number / 2;
+	for (let index = 1; index <= halfNumber; index++) {
+		if (number % index === 0) {
+			result.push(index);
+		}
+	}
+	result.push(number);
+	const finleResult = result.join(",");
+	separator.textContent = finleResult;
+});
